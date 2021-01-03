@@ -38,13 +38,17 @@
     color: #fff;
     font-weight: 600;
     font-size: 16px;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility:    hidden;
+    -ms-backface-visibility:     hidden;
+    backface-visibility: hidden;
   }
 .card .back {
     transform: rotateY(180deg);
 }
 
 .card.flipped {
-    transform: rotateY(180deg);
+    transform: rotateY(179deg);
 }
 
 .cardNumberText{

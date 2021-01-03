@@ -44,5 +44,5 @@
         let dateData = event.target.value.split("-");
         let month = dateData[1];
         let year = dateData[0].slice(-2);
-        $('#expiryDateText').html(dateData ? `${month}/${year}` : '--/--')
+        $('#expiryDateText').html(`${month ? month : '--'}/${year ? year : '--'}`)
     }
