@@ -1,11 +1,17 @@
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Card UI</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+        integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+        crossorigin="anonymous" />
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <div class="container">
         <div class="row">
@@ -13,41 +19,64 @@
                 <div class="mainWrapper">
                     <div class="cardContainer">
                         <div class="card">
-                            <div class="front">Card Side 1</div>
-                            <div class="back">Card Side 2</div>
+                            <div class="front">
+                                <div class="cardData">
+                                    <i class="fab fa-cc-visa fa-2x text-gray mb-2 text-right"></i>
+                                    <h1 class="cardNumberText">**** **** **** ****</h1>
+                                    <div class="cardBottom">
+                                        <h3 class="userName">Your Name</h3>
+                                        <div class="expiryDate">
+                                            <span>Valid Thru</span>
+                                            <h4 id="expiryDateText">--/--</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="back">
+                                <div class="cvvStrip">
+                                    <span class="mr-2 cvcField" style="color: #000;">***</span class="mr-2"
+                                        style="color: #000;">
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="formContainer">
                         <form>
                             <div class="form-group">
-                              <input type="text" class="form-control" id="cardNumber" placeholder="Card Number">
+                                <input type="text" maxlength="19" class="form-control" id="cardNumber"
+                                    placeholder="Card Number">
                             </div>
                             <div class="form-group">
-                              <input type="text" class="form-control" id="name" placeholder="Name">
+                                <input type="text" class="form-control" id="name" placeholder="Name">
                             </div>
                             <div class="form-row">
                                 <div class="form-group col-md-6">
-                                  <input type="text" class="form-control" id="expiryDate" placeholder="Valid Thr">
+                                    <input type="month" min="2020-08" class="form-control" id="expiryDate"
+                                        placeholder="Valid Thr" onchange="expiryDateHandle(event)">
                                 </div>
                                 <div class="form-group col-md-6">
-                                  <input type="password" class="form-control" id="cvc" placeholder="CVC">
+                                    <input type="text" maxlength="3" class="form-control" id="cvc" placeholder="CVC">
                                 </div>
-                              </div>
-                            <button type="submit" class="btn btn-primary btn-lg btn-block">Pay</button>
+                            </div>
+                            <button class="btn btn-primary btn-lg btn-block">Pay</button>
                         </form>
                     </div>
                 </div>
-               
+
             </div>
         </div>
     </div>
 </body>
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-<script>
-    $('.cardContainer').on('click', function () {
-        $('.card').toggleClass('flipped');
-    });
-</script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+
+    <script src="main.js"></script>
+
 </html>
