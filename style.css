@@ -87,7 +87,7 @@
 
 @media (max-width: 500px) {
     .cardContainer {
-        width: 300px;
+        width: 320px;
         height: 200px;
         position: relative;
         perspective: 800px;
